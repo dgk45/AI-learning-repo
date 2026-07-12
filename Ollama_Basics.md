@@ -615,7 +615,14 @@ http://localhost:11434
 curl http://localhost:11434/api/generate ^
 -d "{\"model\":\"qwen3:8b\",\"prompt\":\"Hello\"}"
 ```
-
+```cmd
+curl http://localhost:11434/api/generate ^
+More? -d "{\"model\":\"qwen3:8b\",\"prompt\":\"Hello\",\"stream\":false}"
+```
+```cmd
+curl http://localhost:11434/api/generate ^
+More? -d "{\"model\":\"qwen3:8b\",\"think\":false,\"prompt\":\"Hello\"}"
+```
 ---
 
 # 185. Chat API
