@@ -753,7 +753,125 @@ ollama ps
 echo %OLLAMA_MODELS%
 netstat -ano | findstr 11434
 ```
+---
 
+# 201. Ollama Interactive Session Commands
+
+These commands are available while you are inside an interactive `ollama run <model>` session.
+
+## Set Session Variables
+
+```text
+/set
+```
+
+Sets or modifies session variables.
+
+---
+
+## Show Model Information
+
+```text
+/show
+```
+
+Displays information about the currently loaded model.
+
+---
+
+## Load a Session or Model
+
+```text
+/load <model>
+```
+
+Example:
+
+```text
+/load qwen3:8b
+```
+
+Loads an existing model or saved session.
+
+---
+
+## Save Current Session
+
+```text
+/save <model>
+```
+
+Example:
+
+```text
+/save my-chat
+```
+
+Saves the current conversation/session.
+
+---
+
+## Clear Session Context
+
+```text
+/clear
+```
+
+Clears the current conversation context without exiting.
+
+---
+
+## Exit Ollama
+
+```text
+/bye
+```
+
+Exits the interactive Ollama session.
+
+---
+
+## Help
+
+```text
+/help
+```
+
+or
+
+```text
+/?
+```
+
+Displays available interactive commands.
+
+---
+
+## Keyboard Shortcuts Help
+
+```text
+/? shortcuts
+```
+
+Displays all supported keyboard shortcuts.
+
+---
+
+# Typical Interactive Session
+
+```text
+C:\> ollama run qwen3:8b
+
+>>> /show
+>>> /set
+>>> /clear
+>>> /save my-session
+>>> /load my-session
+>>> /help
+>>> /bye
+```
+
+---
 ---
 
 Happy Learning! 🚀
