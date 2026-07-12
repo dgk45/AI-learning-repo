@@ -870,7 +870,151 @@ C:\> ollama run qwen3:8b
 >>> /help
 >>> /bye
 ```
+---
 
+# 201. Thinking Mode (Thinking Models Only)
+
+Some models (such as **Qwen3**) support **Thinking Mode**. This allows the model to reason before generating the final answer.
+
+---
+
+## Enable Thinking
+
+```text
+/set think
+```
+
+Turns ON thinking mode.
+
+---
+
+## Disable Thinking
+
+```text
+/set nothink
+```
+
+Turns OFF thinking mode.
+
+Recommended when you only want the final answer.
+
+---
+
+## Hide Thinking (Command Line)
+
+```cmd
+ollama run qwen3:8b --hidethinking
+```
+
+The model still thinks internally, but the thinking process is hidden.
+
+Example:
+
+```cmd
+ollama run qwen3:8b --hidethinking "Explain SOLID Principles"
+```
+
+---
+
+## Disable Thinking (Command Line)
+
+```cmd
+ollama run qwen3:8b --think=false
+```
+
+Example:
+
+```cmd
+ollama run qwen3:8b --think=false "Hello"
+```
+
+---
+
+## Enable Thinking (Command Line)
+
+```cmd
+ollama run qwen3:8b --think=true
+```
+
+---
+
+## API - Disable Thinking
+
+```json
+{
+  "model": "qwen3:8b",
+  "think": false,
+  "prompt": "Hello"
+}
+```
+
+---
+
+## API - Enable Thinking
+
+```json
+{
+  "model": "qwen3:8b",
+  "think": true,
+  "prompt": "Hello"
+}
+```
+
+---
+
+## API - Disable Streaming
+
+```json
+{
+  "model": "qwen3:8b",
+  "stream": false,
+  "prompt": "Hello"
+}
+```
+
+Returns a single JSON response instead of streaming multiple JSON objects.
+
+---
+
+## Interactive Session Example
+
+```text
+C:\> ollama run qwen3:8b
+
+>>> /set nothink
+
+Thinking disabled.
+
+>>> Explain SOLID Principles.
+
+SOLID is a set of five object-oriented design principles...
+```
+
+---
+
+## Notes
+
+- Supported by **thinking models** such as **Qwen3**.
+- `/set think` enables reasoning mode.
+- `/set nothink` disables reasoning mode.
+- `--hidethinking` hides the reasoning while still allowing internal thinking.
+- `--think=false` completely disables thinking.
+- `stream=false` returns the complete response as a single JSON object.
+
+---
+
+## Related Commands
+
+```text
+/set
+/show
+/load
+/save
+/clear
+/bye
+/help
+/? shortcuts
+```
 ---
 ---
 
