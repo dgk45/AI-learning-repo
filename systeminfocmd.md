@@ -1000,6 +1000,334 @@ wmic sounddev get Name,Manufacturer
 ```cmd
 wmic nic get Name
 ```
+---
+
+# 121. Complete System Health Report (Battery, CPU, Power)
+
+```cmd
+powercfg /systemsleepdiagnostics
+```
+
+> Generates a sleep diagnostics report (supported systems only).
+
+---
+
+# 122. Battery Health Report
+
+```cmd
+powercfg /batteryreport
+```
+
+Output:
+```
+battery-report.html
+```
+
+Open the generated HTML file in your browser.
+
+---
+
+# 123. Energy Efficiency Report
+
+```cmd
+powercfg /energy
+```
+
+Output:
+```
+energy-report.html
+```
+
+Shows:
+- CPU usage
+- Driver issues
+- Power settings
+- Sleep problems
+
+---
+
+# 124. System File Checker (Repair Windows Files)
+
+```cmd
+sfc /scannow
+```
+
+Checks and repairs corrupted Windows system files.
+
+---
+
+# 125. Verify System Files Only
+
+```cmd
+sfc /verifyonly
+```
+
+Checks integrity without repairing.
+
+---
+
+# 126. DISM Health Check
+
+```cmd
+DISM /Online /Cleanup-Image /CheckHealth
+```
+
+Quickly checks whether the Windows image is damaged.
+
+---
+
+# 127. DISM Scan Health
+
+```cmd
+DISM /Online /Cleanup-Image /ScanHealth
+```
+
+Performs a deeper scan for corruption.
+
+---
+
+# 128. DISM Restore Health
+
+```cmd
+DISM /Online /Cleanup-Image /RestoreHealth
+```
+
+Downloads and repairs corrupted Windows components.
+
+Recommended before running SFC if corruption exists.
+
+---
+
+# 129. Check Disk
+
+```cmd
+chkdsk C:
+```
+
+Checks the disk for errors.
+
+---
+
+# 130. Repair Disk
+
+```cmd
+chkdsk C: /f
+```
+
+Repairs file system errors.
+
+Restart may be required.
+
+---
+
+# 131. Scan Bad Sectors
+
+```cmd
+chkdsk C: /r
+```
+
+Finds bad sectors and attempts recovery.
+
+---
+
+# 132. Scan and Repair
+
+```cmd
+chkdsk C: /f /r
+```
+
+Complete disk repair.
+
+---
+
+# 133. Disk Free Space
+
+```cmd
+fsutil volume diskfree C:
+```
+
+---
+
+# 134. SMART Disk Status
+
+```cmd
+wmic diskdrive get status
+```
+
+Expected:
+
+```
+Status
+OK
+```
+
+---
+
+# 135. Detailed SMART Information
+
+```cmd
+wmic diskdrive get model,status,size
+```
+
+---
+
+# 136. Memory Diagnostic
+
+```cmd
+mdsched
+```
+
+Schedules Windows Memory Diagnostic after restart.
+
+---
+
+# 137. Windows Reliability Monitor
+
+```cmd
+perfmon /rel
+```
+
+Shows:
+- Crashes
+- Driver failures
+- Windows updates
+- Stability Index
+
+Highly recommended.
+
+---
+
+# 138. Performance Monitor
+
+```cmd
+perfmon
+```
+
+Live monitoring of:
+- CPU
+- Memory
+- Disk
+- Network
+
+---
+
+# 139. Resource Monitor
+
+```cmd
+resmon
+```
+
+Shows:
+- CPU
+- RAM
+- Disk
+- Network
+- Processes
+
+---
+
+# 140. DirectX Diagnostic
+
+```cmd
+dxdiag
+```
+
+Checks:
+- GPU
+- Audio
+- Drivers
+- DirectX
+
+---
+
+# 141. Driver Verification
+
+```cmd
+driverquery
+```
+
+Lists installed drivers.
+
+---
+
+# 142. Detailed Driver Information
+
+```cmd
+driverquery /v
+```
+
+---
+
+# 143. Driver Information in CSV
+
+```cmd
+driverquery /fo csv
+```
+
+---
+
+# 144. Driver Information in Table
+
+```cmd
+driverquery /fo table
+```
+
+---
+
+# 145. Installed Windows Updates
+
+```cmd
+wmic qfe list
+```
+
+---
+
+# 146. Event Viewer
+
+```cmd
+eventvwr
+```
+
+View:
+- Application Logs
+- System Logs
+- Security Logs
+
+---
+
+# 147. Current Running Services
+
+```cmd
+sc query
+```
+
+---
+
+# 148. Windows Defender Status (PowerShell)
+
+```powershell
+Get-MpComputerStatus
+```
+
+---
+
+# 149. Windows Defender Scan
+
+```cmd
+"%ProgramFiles%\Windows Defender\MpCmdRun.exe" -Scan -ScanType 2
+```
+
+Full malware scan.
+
+---
+
+# 150. Overall System Information
+
+```cmd
+systeminfo
+```
+
+Useful for a quick health overview.
 
 ---
 
