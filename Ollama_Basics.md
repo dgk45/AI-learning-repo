@@ -284,18 +284,468 @@ Find the bug in this code.
 
 ---
 
-# Learning Roadmap
+---
 
-- ✅ Install Ollama
-- ✅ Download Models
-- ✅ Basic Commands
-- ⬜ VS Code Integration
-- ⬜ Continue Extension
-- ⬜ Cline Extension
-- ⬜ GitHub Copilot Comparison
-- ⬜ Prompt Engineering
-- ⬜ Local AI Coding Workflow
-- ⬜ Build AI Projects
+# 151. Start Ollama Server
+
+Starts the Ollama API server.
+
+```cmd
+ollama serve
+```
+
+Default Endpoint
+
+```
+http://localhost:11434
+```
+
+---
+
+# 152. Run a Model
+
+Loads a model and starts an interactive chat.
+
+```cmd
+ollama run qwen3:8b
+```
+
+Example
+
+```cmd
+ollama run llama3.1:8b
+```
+
+---
+
+# 153. Pull (Download) a Model
+
+Downloads a model from the Ollama Registry.
+
+```cmd
+ollama pull qwen3:8b
+```
+
+---
+
+# 154. Push a Model
+
+Uploads your custom model to the Ollama Registry.
+
+```cmd
+ollama push mymodel
+```
+
+Requires login.
+
+---
+
+# 155. List Installed Models
+
+```cmd
+ollama list
+```
+
+---
+
+# 156. Show Running Models
+
+```cmd
+ollama ps
+```
+
+---
+
+# 157. Stop a Running Model
+
+```cmd
+ollama stop qwen3:8b
+```
+
+---
+
+# 158. Remove a Model
+
+```cmd
+ollama rm qwen3:8b
+```
+
+---
+
+# 159. Copy a Model
+
+Creates another copy with a different name.
+
+```cmd
+ollama cp qwen3:8b my-qwen
+```
+
+---
+
+# 160. Create a Custom Model
+
+Creates a model from a Modelfile.
+
+```cmd
+ollama create mymodel -f Modelfile
+```
+
+---
+
+# 161. Show Model Details
+
+```cmd
+ollama show qwen3:8b
+```
+
+---
+
+# 162. Show Model License
+
+```cmd
+ollama show qwen3:8b --license
+```
+
+---
+
+# 163. Show Model Parameters
+
+```cmd
+ollama show qwen3:8b --parameters
+```
+
+---
+
+# 164. Show Modelfile
+
+```cmd
+ollama show qwen3:8b --modelfile
+```
+
+---
+
+# 165. Display Help
+
+```cmd
+ollama help
+```
+
+or
+
+```cmd
+ollama --help
+```
+
+---
+
+# 166. Show Version
+
+```cmd
+ollama --version
+```
+
+---
+
+# 167. Verbose Output
+
+```cmd
+ollama --verbose
+```
+
+Useful for troubleshooting.
+
+---
+
+# 168. Display Help for a Specific Command
+
+```cmd
+ollama run --help
+```
+
+Example
+
+```cmd
+ollama pull --help
+```
+
+---
+
+# 169. List Available Commands
+
+```cmd
+ollama
+```
+
+---
+
+# 170. Pull Latest Version
+
+```cmd
+ollama pull llama3.1:latest
+```
+
+---
+
+# 171. Pull Specific Version
+
+```cmd
+ollama pull qwen3:8b
+```
+
+---
+
+# 172. Pull by Digest
+
+```cmd
+ollama pull model@sha256:<digest>
+```
+
+---
+
+# 173. Run with Prompt
+
+```cmd
+ollama run qwen3:8b "Explain SOLID Principles."
+```
+
+---
+
+# 174. Run with Multiline Prompt
+
+```cmd
+ollama run qwen3:8b
+```
+
+Then type your prompt.
+
+---
+
+# 175. Show Running Model Memory
+
+```cmd
+ollama ps
+```
+
+Displays model size and processor usage.
+
+---
+
+# 176. Remove Multiple Models
+
+```cmd
+ollama rm llama3.1:8b
+ollama rm qwen3:8b
+```
+
+---
+
+# 177. Copy and Modify a Model
+
+```cmd
+ollama cp qwen3:8b qwen3-dev
+```
+
+---
+
+# 178. Create Model from Existing Model
+
+Example Modelfile
+
+```text
+FROM qwen3:8b
+
+SYSTEM You are an expert .NET developer.
+```
+
+Create
+
+```cmd
+ollama create dotnet-ai -f Modelfile
+```
+
+---
+
+# 179. Show Custom Model
+
+```cmd
+ollama show dotnet-ai
+```
+
+---
+
+# 180. Remove Custom Model
+
+```cmd
+ollama rm dotnet-ai
+```
+
+---
+
+# 181. Start Chat
+
+```cmd
+ollama run qwen3:8b
+```
+
+---
+
+# 182. Exit Chat
+
+Press
+
+```
+Ctrl + C
+```
+
+---
+
+# 183. View Local API
+
+Open
+
+```
+http://localhost:11434
+```
+
+---
+
+# 184. Generate Using REST API
+
+```cmd
+curl http://localhost:11434/api/generate ^
+-d "{\"model\":\"qwen3:8b\",\"prompt\":\"Hello\"}"
+```
+
+---
+
+# 185. Chat API
+
+```cmd
+curl http://localhost:11434/api/chat
+```
+
+---
+
+# 186. List Local Models via API
+
+```cmd
+curl http://localhost:11434/api/tags
+```
+
+---
+
+# 187. Show Model Information via API
+
+```cmd
+curl http://localhost:11434/api/show
+```
+
+---
+
+# 188. Embeddings API
+
+```cmd
+curl http://localhost:11434/api/embed
+```
+
+---
+
+# 189. Generate Embeddings
+
+```cmd
+curl http://localhost:11434/api/embeddings
+```
+
+---
+
+# 190. Check Server Availability
+
+```cmd
+curl http://localhost:11434
+```
+
+---
+
+# 191. Find Ollama Process
+
+```cmd
+tasklist | findstr ollama
+```
+
+---
+
+# 192. Kill Ollama
+
+```cmd
+taskkill /F /IM ollama.exe
+```
+
+---
+
+# 193. Restart Ollama
+
+```cmd
+taskkill /F /IM ollama.exe
+ollama serve
+```
+
+---
+
+# 194. Check Environment Variable
+
+```cmd
+echo %OLLAMA_MODELS%
+```
+
+---
+
+# 195. Check Model Folder
+
+```cmd
+dir %OLLAMA_MODELS%
+```
+
+---
+
+# 196. List Environment Variables
+
+```cmd
+set OLLAMA
+```
+
+---
+
+# 197. Show Port Usage
+
+```cmd
+netstat -ano | findstr 11434
+```
+
+---
+
+# 198. Check Ollama Logs
+
+Logs are typically located under your user profile's Ollama directory or the configured data directory.
+
+---
+
+# 199. Verify Installed Model
+
+```cmd
+ollama show qwen3:8b
+```
+
+---
+
+# 200. Complete Ollama Status Check
+
+```cmd
+ollama --version
+ollama list
+ollama ps
+echo %OLLAMA_MODELS%
+netstat -ano | findstr 11434
+```
 
 ---
 
