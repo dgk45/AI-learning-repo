@@ -596,10 +596,13 @@ wmic memorychip get SerialNumber
 
 ---
 
-## 64. RAM Bank Information
+## 64. RAM Bank Information & Resolution 
 
 ```cmd
 wmic memorychip get BankLabel,DeviceLocator,Capacity
+```
+```
+wmic path Win32_VideoController get CurrentHorizontalResolution,CurrentVerticalResolution
 ```
 
 ---
