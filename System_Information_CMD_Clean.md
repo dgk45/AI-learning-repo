@@ -601,7 +601,7 @@ wmic memorychip get SerialNumber
 ```cmd
 wmic memorychip get BankLabel,DeviceLocator,Capacity
 ```
-```
+```cmd
 wmic path Win32_VideoController get CurrentHorizontalResolution,CurrentVerticalResolution
 ```
 
